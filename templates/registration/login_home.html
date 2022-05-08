@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+
+
+   {% block content %}
+  <form action="{% url 'user_login' %}" method="post"  >
+ 
+    {% csrf_token %}
+    <div class="form-group" ">
+      <label for="username">نام کاربری</label>
+     <input type="text" name="username" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="text">رمز عبور</label>
+      <input type="password" name="password" class="form-control"/>
+    </div>
+    <button value="login" type="submit" class="btn btn-success">ورود</button>
+  </form>
+
+  <br/><br/>
+
+
+
+  {% if message != None %}
+  {{message}}
+  {% endif %}
+{% endblock %} 
+

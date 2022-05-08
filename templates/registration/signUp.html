@@ -1,0 +1,22 @@
+
+{% extends 'blog/base.html' %}
+
+
+
+   {% block content %}
+  <form action="{% url 'signUp' %}" method="post" >
+ 
+    {% csrf_token %}
+    <div class="form-group" ">
+      <label for="username">نام کاربری</label>
+     <input type="text" name="username" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="text">رمز عبور</label>
+      <input type="password" name="password" class="form-control"/>
+      <label for="text">رمز عبورتکرار</label>
+      <input type="password" name="confirm_password" class="form-control"/>
+    </div>
+    <button value="register" type="submit" class="btn btn-success">ثبت نام</button>
+  </form>
+{% endblock %} 
